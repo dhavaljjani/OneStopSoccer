@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> My Chrome Extension</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="./popup.css" />
+</head>
+<body>
+	<div class="container">
+		<br>
+		<!--<div class="dropdown">
+			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Pick your league of choice:
+			</button>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			  <a class="dropdown-item" href="#">MLS</a>
+			  <a class="dropdown-item" href="#">Premier League</a>
+			  <a class="dropdown-item" href="#">La Liga</a>
+			</div>
+		  </div>-->
+
+		<label for="leagues">Pick your league of choice:</label>
+		<select name="leagues" id="leagues">
+ 	 		<option value="MLS">MLS</option>
+			<option value="premier-league">Premier League</option>
+  			<option value="la-liga">La Liga</option>
+  			<option value="bundesliga">Bundesliga</option>
+			<option value="ligue-1">Ligue 1</option>
+			<option value="serie-a">Serie A</option>
+		</select>
+		Current schedule:
+		<ol> </ol>
+		Latest MLS videos:
+		<input type="button" class="btn btn-dark" value="youtube" id="ytlink" />
+		Standings:
+		<table>
+			<tr>
+				<th>Club</th>
+				<th>Record</th>
+				<th>Points</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>22</td>
+				<td>33</td>
+			</tr>
+		</table>
+		<br>
+	</div>
+	<script src="popup.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

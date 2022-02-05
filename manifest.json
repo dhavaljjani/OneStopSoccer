@@ -1,0 +1,12 @@
+{
+	"name": "One Stop Soccer",
+	"manifest_version": 2,
+	"description": "Your one stop spot for all things MLS and other leagues!",
+	"version":"1.0",
+	"browser_action":{
+		"default_icon": "./img/icon.png",
+		"default_popup": "popup.html"
+	},
+	"permissions": ["tabs", "browsingData", "webRequest"]
+}
+

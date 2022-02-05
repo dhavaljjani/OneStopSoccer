@@ -1,0 +1,8 @@
+.container{
+	background-color: #EF5353;
+	border-radius: 5%;
+}
+
+table, tr, td {
+	border:1px solid black;
+}
