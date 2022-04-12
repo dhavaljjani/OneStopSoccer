@@ -1,12 +1,12 @@
 {
 	"name": "One Stop Soccer",
-	"manifest_version": 2,
-	"description": "Your one stop spot for all things MLS and other leagues!",
+	"manifest_version": 3,
+	"description": "Your one stop spot for historical data for MLS and other leagues!",
 	"version":"1.0",
-	"browser_action":{
+	"action":{
 		"default_icon": "./img/icon.png",
 		"default_popup": "popup.html"
 	},
-	"permissions": ["tabs", "browsingData", "webRequest"]
+	"permissions": ["tabs", "browsingData", "webRequest"],
+	"host_permissions": ["<all_urls>"]
 }
-
