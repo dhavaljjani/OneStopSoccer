@@ -1,10 +1,16 @@
-body{
+body {
+	margin-top: 10px;
+	margin-bottom: 10px;
 	background-color: #EF5353;
-	border-radius: 5%;
 }
 
-table, tr, td {
+.container {
+	border-radius: 20px;
+}
+
+tr{
 	border:1px solid black;
+	margin: auto;
 }
 
 h1 {
@@ -17,4 +23,17 @@ label {
 
 #line {
 	text-align: center;
+	margin-bottom: 10px;
+}
+
+#description {
+	visibility: hidden;
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	font-size: 2 vw;
+	border-radius: 15px;
+	background-color: aquamarine;
 }
