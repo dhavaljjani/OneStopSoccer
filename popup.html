@@ -8,24 +8,16 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<link rel="stylesheet" href="./popup.css" />
+	<script src="./badges.js"></script>
+	<script src="./league-select.js"></script>
 	<script src="./popup.js"></script>
 </head>
 <body>
 	<div class="container">
 		<h1> One Stop Soccer </h1>
-		<!--<div class="dropdown">
-			<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			Pick your league of choice:
-			</button>
-			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			  <a class="dropdown-item" href="#">MLS</a>
-			  <a class="dropdown-item" href="#">Premier League</a>
-			  <a class="dropdown-item" href="#">La Liga</a>
-			</div>
-		  </div>-->
 		  <div id="line">
 			<label for="leagues">Pick your league of choice:</label>
-			<select name="leagues" id="leagues">
+			<select name="leagues" id="leagues-select">
 				<option value="MLS">MLS</option>
 				<option value="premier-league">Premier League</option>
 				<option value="la-liga">La Liga</option>
@@ -33,40 +25,20 @@
 				<option value="ligue-1">Ligue 1</option>
 				<option value="serie-a">Serie A</option>
 			</select>
+			<button id="matchesButton" class="btn btn-dark"></button>
 		  </div>
-		<br>
+		<div id="description">Latest results:</div>
+		<div id="matches"></div>
+		<div id="detailsButton" ></div>
+		<div id="line">
+			Standings:
+			<button id="standingsButton" class="btn btn-dark"></button>
+			<div id="standings1"></div>
+		</div>
 		<div id="line">
 			Latest MLS videos:
-			<input type="button" class="btn btn-primary" value="Youtube" id="ytlink" />
+			<input type="button" class="btn btn-dark" value="Youtube" id="ytlink" />
 		</div>
-		<br>
-		<label>Season:</label>
-		<select name="season" id="season">
- 	 		<option value="2019">2019</option>
-			<option value="2018">2018</option>
-		</select>
-
-		Standings:
-		<p id="standing"></p>
-		<table id='standings'>
-			<tr>
-				<th>Club</th>
-				<th>Record</th>
-				<th>Points</th>
-			</tr>
-			<tr>
-				<td>1</td>
-				<td>2</td>
-				<td>3</td>
-			</tr>
-			<tr>
-				<td>11</td>
-				<td>22</td>
-				<td>33</td>
-			</tr>
-		</table>
-		<br>
-		Roster:
 	</div>
 </body>
 </html>
