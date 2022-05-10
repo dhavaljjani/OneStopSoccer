@@ -16,7 +16,6 @@ function leagueSelect(){
 			codeNum = 3;
 			break;
 		case("serie-a"):
-			console.log("YOU WERE CLEARLY MEANT FOR MORE");
 			codeNum = 4;
 			break;
 	}
