@@ -2,6 +2,7 @@ function returnBadgeHTML(clubName){
 	let badgeLocation = "<img src=\"./img/crests";
 	
 	switch(clubName){
+		//PL
 		case("Watford FC"):
 			badgeLocation += "/PL/watford.png"
 			break
@@ -62,6 +63,7 @@ function returnBadgeHTML(clubName){
 		case("Liverpool FC"):
 			badgeLocation += "/PL/liverpool.png"
 			break
+		//La Liga
 		case("FC Barcelona"):
 			badgeLocation += "/LALIGA/barcelona.png"
 			break
@@ -121,6 +123,183 @@ function returnBadgeHTML(clubName){
 			break
 		case("CA Osasuna"):
 			badgeLocation += "/LALIGA/osasuna.png"
+			break
+		//BL
+		case("FC Bayern München"):
+			badgeLocation += "/BL/bayern_munchen.png"
+			break
+		case("Borussia Dortmund"):
+			badgeLocation += "/BL/dortmund.png"
+			break
+		case("Bayer 04 Leverkusen"):
+			badgeLocation += "/BL/leverkusen.png"
+			break
+		case("RB Leipzig"):
+			badgeLocation += "/BL/rb_leipzig.png"
+			break
+		case("SC Freiburg"):
+			badgeLocation += "/BL/freiburg.png"
+			break
+		case("1. FC Union Berlin"):
+			badgeLocation += "/BL/union_berlin.png"
+			break
+		case("1. FC Köln"):
+			badgeLocation += "/BL/koln.png"
+			break
+		case("TSG 1899 Hoffenheim"):
+			badgeLocation += "/BL/hoffenheim.png"
+			break
+		case("1. FSV Mainz 05"):
+			badgeLocation += "/BL/mainz.png"
+			break
+		case("Borussia Mönchengladbach"):
+			badgeLocation += "/BL/monchengladbach.png"
+			break
+		case("VfL Bochum 1848"):
+			badgeLocation += "/BL/vfl_bochum.png"
+			break
+		case("Eintracht Frankfurt"):
+			badgeLocation += "/BL/eintracht_frankfurt.png"
+			break
+		case("VFL Wolfsburg"):
+			badgeLocation += "/BL/wolfsburg.png"
+			break
+		case("FC Augsburg"):
+			badgeLocation += "/BL/augsburg.png"
+			break
+		case("Hertha BSC"):
+			badgeLocation += "/BL/hertha_berlin.png"
+			break
+		case("VfB Stuttgart"):
+			badgeLocation += "/BL/stuttgart.png"
+			break
+		case("Arminia Bielefeld"):
+			badgeLocation += "/BL/arminia_bielefeld.png"
+			break
+		case("SpVgg Greuther Fürth 1903"):
+			badgeLocation += "/BL/greuther_furth.png"
+			break
+		//L1
+		case("Paris Saint-Germain FC"):
+			badgeLocation += "/L1/psg.png"
+			break
+		case("Olympique de Marseille"):
+			badgeLocation += "/L1/marseille.png"
+			break
+		case("AS Monaco FC"):
+			badgeLocation += "/L1/monaco.png"
+			break
+		case("Stade Rennais FC 1901"):
+			badgeLocation += "/L1/stade_rennais.png"
+			break
+		case("RC Strasbourg Alsace"):
+			badgeLocation += "/L1/strasbourg_alsace.png"
+			break
+		case("OGC Nice"):
+			badgeLocation += "/L1/nice.png"
+			break
+		case("Racing Club de Lens"):
+			badgeLocation += "/L1/rc_lens.png"
+			break
+		case("Olympique Lyonnais"):
+			badgeLocation += "/L1/lyon.png"
+			break
+		case("FC Nantes"):
+			badgeLocation += "/L1/nantes.png"
+			break
+		case("Lille OSC"):
+			badgeLocation += "/L1/lille.png"
+			break
+		case("Stade Brestois 29"):
+			badgeLocation += "/L1/stade_brestois.png" 
+			break
+		case("Stade de Reims"):
+			badgeLocation += "/L1/stade_reims.png"
+			break
+		case("Montpellier HSC"):
+			badgeLocation += "/L1/montpellier.png"
+			break
+		case("Angers SCO"):
+			badgeLocation += "/L1/angers.png"
+			break
+		case("FC Lorient"):
+			badgeLocation += "/L1/lorient.png"
+			break
+		case("ES Troyes AC"):
+			badgeLocation += "/L1/es_troyes.png"
+			break
+		case("Clermont Foot 63"):
+			badgeLocation += "/L1/clermont_foot.png"
+			break
+		case("AS Saint-Étienne"):
+			badgeLocation += "/L1/saint_etienne.png"
+			break
+		case("FC Metz"):
+			badgeLocation += "/L1/metz.png"
+			break
+		case("FC Girondins de Bordeaux"):
+			badgeLocation += "/L1/girondins_bordeaux.png"
+			break
+		//Serie A
+		case("AC Milan"):
+			badgeLocation += "/SA/ac_milan.png"
+			break
+		case("FC Internazionale Milano"):
+			badgeLocation += "/SA/inter_milan.png"
+			break
+		case("SSC Napoli"):
+			badgeLocation += "/SA/napoli.png"
+			break
+		case("Juventus FC"):
+			badgeLocation += "/SA/juventus.png"
+			break
+		case("AS Roma"):
+			badgeLocation += "/SA/roma.png"
+			break
+		case("SS Lazio"):
+			badgeLocation += "/SA/lazio.png"
+			break
+		case("ACF Fiorentina"):
+			badgeLocation += "/SA/fiorentina.png"
+			break
+		case("Atalanta BC"):
+			badgeLocation += "/SA/atalanta.png"
+			break
+		case("Hellas Verona FC"):
+			badgeLocation += "/SA/hellas_verona.png"
+			break
+		case("US Sassuolo Calcio"):
+			badgeLocation += "/SA/sassuolo.png"
+			break
+		case("Udinese Calcio"):
+			badgeLocation += "/SA/udinese.png" 
+			break
+		case("Bologna FC 1909"):
+			badgeLocation += "/SA/bologna.png"
+			break
+		case("Empoli FC"):
+			badgeLocation += "/SA/empoli.png"
+			break
+		case("UC Sampdoria"):
+			badgeLocation += "/SA/sampdoria.png"
+			break
+		case("Spezia Calcio"):
+			badgeLocation += "/SA/spezia_calcio.png"
+			break
+		case("US Salernitana 1919"):
+			badgeLocation += "/SA/salernitana.png"
+			break
+		case("Cagliari Calcio"):
+			badgeLocation += "/SA/cagliari.png"
+			break
+		case("Genoa CFC"):
+			badgeLocation += "/SA/genoa.png"
+			break
+		case("Venezia FC"):
+			badgeLocation += "/SA/venezia.png"
+			break
+		case("Torino FC"):
+			badgeLocation += "/SA/torino.png"
 			break
 	}
 	badgeLocation += "\" width=\"10%\" height=\"10%\">";
