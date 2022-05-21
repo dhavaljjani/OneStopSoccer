@@ -3,6 +3,9 @@ function leagueSelect(){
     var leagueName = document.getElementById("leagues-select").value;
 	var codeNum = null;
 	switch (leagueName){
+		case("MLS"):
+			codeNum = -1;
+			break;
 		case("premier-league"):
 			codeNum = 0;
 			break;
