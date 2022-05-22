@@ -21,6 +21,12 @@ function leagueSelect(){
 		case("serie-a"):
 			codeNum = 4;
 			break;
+		case("eredivisie"):
+			codeNum = 5;
+			break
+		case("cl"):
+			codeNum = 6;
+			break
 	}
     return codeNum;
 }
