@@ -161,7 +161,7 @@ function returnBadgeHTML(clubName){
 		case("Eintracht Frankfurt"):
 			badgeLocation += "/BL/eintracht_frankfurt.png"
 			break
-		case("VFL Wolfsburg"):
+		case("VfL Wolfsburg"):
 			badgeLocation += "/BL/wolfsburg.png"
 			break
 		case("FC Augsburg"):
@@ -300,6 +300,61 @@ function returnBadgeHTML(clubName){
 			break
 		case("Torino FC"):
 			badgeLocation += "/SA/torino.png"
+			break
+		//Eredivisie
+		case("AFC Ajax"):
+			badgeLocation += "/DED/ajax.png"
+			break
+		case("PSV"):
+			badgeLocation += "/DED/psv.png"
+			break
+		case("FC Twente '65"):
+			badgeLocation += "/DED/fc_twente.png"
+			break
+		case("Feyenoord Rotterdam"):
+			badgeLocation += "/DED/feyenoord.png"
+			break
+		case("AZ"):
+			badgeLocation += "/DED/az.png"
+			break
+		case("SBV Vitesse"):
+			badgeLocation += "/DED/vitesse.png"
+			break
+		case("FC Utrecht"):
+			badgeLocation += "/DED/utrecht.png"
+			break
+		case("SC Heerenveen"):
+			badgeLocation += "/DED/heerenveen.png"
+			break
+		case("SC Cambuur-Leeuwarden"):
+			badgeLocation += "/DED/cambuur.png"
+			break
+		case("NEC"):
+			badgeLocation += "/DED/nec.png"
+			break
+		case("FC Groningen"):
+			badgeLocation += "/DED/groningen.png"
+			break
+		case("Go Ahead Eagles"):
+			badgeLocation += "/DED/go_ahead_eagles.png"
+			break
+		case("Sparta Rotterdam"):
+			badgeLocation += "/DED/rotterdam.png"
+			break
+		case("Fortuna Sittard"):
+			badgeLocation += "/DED/sittard.png"
+			break
+		case("Heracles Almelo"):
+			badgeLocation += "/DED/heracles.png"
+			break
+		case("Willem II Tilburg"):
+			badgeLocation += "/DED/willem.png"
+			break
+		case("PEC Zwolle"):
+			badgeLocation += "/DED/pec_zwolle.png"
+			break
+		case("RKC Waalwijk"):
+			badgeLocation += "/DED/waalwijk.png"
 			break
 	}
 	badgeLocation += "\" width=\"10%\" height=\"10%\">";
