@@ -15,7 +15,7 @@
 <body>
 	<div class="container">
 		<h1> One Stop Soccer </h1>
-		  <div id="line">
+		<div id="line">
 			<label for="leagues">Pick your league of choice:</label>
 			<select name="leagues" id="leagues-select">
 				<option value="MLS">MLS</option>
@@ -24,19 +24,22 @@
 				<option value="bundesliga">Bundesliga</option>
 				<option value="ligue-1">Ligue 1</option>
 				<option value="serie-a">Serie A</option>
+				<option value="eredivisie">Eredivisie</option>
+				<option value="cl">CL</option>
 			</select>
+			<input type="number" id="numMatches" style="width: 3em" min="0">
 			<button id="matchesButton" class="btn btn-dark"></button>
-		  </div>
+		</div>
 		<div id="description">Latest results:</div>
 		<div id="matches"></div>
-		<div id="detailsButton" ></div>
+		<div id="details" ></div>
 		<div id="line">
 			Standings:
 			<button id="standingsButton" class="btn btn-dark"></button>
 			<div id="standings1"></div>
 		</div>
 		<div id="line">
-			Latest MLS videos:
+			Latest highlights: <br>
 			<input type="button" class="btn btn-dark" value="Youtube" id="ytlink" />
 		</div>
 	</div>

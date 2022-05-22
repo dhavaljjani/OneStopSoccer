@@ -4,10 +4,6 @@ body {
 	background-color: #EF5353;
 }
 
-.container {
-	border-radius: 20px;
-}
-
 tr{
 	border:1px solid black;
 	margin: auto;
