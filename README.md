@@ -1,6 +1,5 @@
 # OneStopSoccer
 
----
 *Your one stop spot for all things MLS and other leagues!*
 
 A quick simple way to check match information, scores, and standings. Also links to official Youtube competition highlights and videos. Currently supports the following competitions:
@@ -13,3 +12,5 @@ A quick simple way to check match information, scores, and standings. Also links
 7. Eredivisie
 8. Champions League.
 9. Support for the World Cup coming soon!
+
+Made using football-data.org API and Wikipedia.
