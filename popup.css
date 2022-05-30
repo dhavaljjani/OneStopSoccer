@@ -22,6 +22,11 @@ label {
 	margin-bottom: 10px;
 }
 
+#right {
+	text-align: right;
+	margin-bottom: 10px;
+}
+
 #description {
 	visibility: hidden;
 	text-align: center;
@@ -30,6 +35,12 @@ label {
 p {
 	text-align: center;
 	font-size: 2 vw;
-	border-radius: 15px;
+	border-radius: 10px;
 	background-color: aquamarine;
+	
+}
+
+#APItext {
+	font-size: 9px;
+	text-align: center;
 }
