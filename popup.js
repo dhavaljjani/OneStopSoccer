@@ -78,8 +78,17 @@ function makeAPIinputElement(){
 function returnMatches(){
 	//clear divs
 	document.getElementById('matches').innerHTML = "";
+
+	if (document.getElementById("APIinput")){
+		if (document.getElementById("APIinput").value != ""){
+			API_KEY = document.getElementById("APIinput").value;
+		} else {
+			API_KEY = "95302cdd6b314a0a834875835cdd7a15";
+		}
+	}
+
 	document.getElementById("APItext").innerHTML = "";
-	
+
 	makeAPIinputElement();
 	
 	//This code gets the value of the league selector ui and converts it to a number we can use to correspond with football data api
@@ -102,6 +111,11 @@ function returnMatches(){
 		url: "http://api.football-data.org/v2/competitions/" + competitionCode[leagueCode] + "/matches?status=FINISHED",
 		dataType: 'json',
 		type: 'GET',
+		error: function(){
+			var   errorText = document.createElement("p");
+			errorText.innerHTML = "Invalid API token entered! Try new token, or reload extension.";
+			document.getElementById("matches").appendChild(errorText);
+		}
 	}).done(function(response) {
 		//response is JSON-derulo type
 		let match = "";
