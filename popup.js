@@ -1,6 +1,9 @@
 //for football-data.org
 let API_KEY = '95302cdd6b314a0a834875835cdd7a15'
+//for API codes
 let competitionCode = ["PL", "PD", "BL1", "FL1", "SA", "DED", "CL"];
+//for match <p> color
+colors = ["beige", "aliceblue", "antique", "azure", "bisque"];
 
 var referees = [];
 var matchDates = [];
@@ -96,10 +99,54 @@ function returnMatches(){
 	var numMatchesToDisplay = document.getElementById("numMatches").value;
 
 	if (leagueCode == -1){
+		const xhttps = new XMLHttpRequest();
+		xhttps.addEventListener("load", function onLoad () {
+			var parser = new DOMParser();
+			var htmlDoc = parser.parseFromString(this.responseText, 'text/html');
+			var lastTenMatchesAsList = htmlDoc.getElementsByClassName("rounds r_61625 w_")[0].getElementsByTagName('li');
+			lastTenMatchesAsList[0].remove() //not match data
+			var colorNum = 0;
+			var matchCounter = 0;
+			for(const match of lastTenMatchesAsList){
+				let matchData = "";
+				var teams = match.getElementsByClassName("text hidden-xs");
+				for(var i = 0 ; i < teams.length ; i++){
+					let teamName = teams[i].textContent.trim();
+					if(i == 0){
+						matchData += returnBadgeHTML(teamName) + " ";
+						matchData += teamName;
+						matchData += " played ";
+					} else {
+						matchData += teamName;
+						matchData += returnBadgeHTML(teamName) + " ";
+					}
+				}
+				matchData += "<br>";
+				var score = match.getElementsByClassName("score-text");
+				for(var k = 0 ; k < score.length ; k++){
+					matchData += score[k].textContent;
+				}
+				const newParagraph = document.createElement("p");
+				newParagraph.innerHTML += matchData;
+				newParagraph.style.backgroundColor = colors[colorNum];
+				document.getElementById('matches').appendChild(newParagraph);
+				//cycling through the color options, reset at 5
+				colorNum += 1;
+				matchCounter += 1;
+				if(colorNum == 5){
+					colorNum = 0;
+				}
+				if(numMatchesToDisplay == matchCounter){
+					return;
+				}
+			}
+		});
+		xhttps.open("GET", "https://www.footballcritic.com/mls/season-2022/matches/47/63944");
+		xhttps.send();
 		const matchAlert = document.createElement("p");
 		matchAlert.style.backgroundColor = "#212529";
 		matchAlert.style.color = "white";
-		matchAlert.innerHTML = "MLS Match Data coming soon!";
+	 	matchAlert.innerHTML = "More MLS Match details coming soon!";
 
 		document.getElementById('matches').appendChild(matchAlert);
 		return;
@@ -124,8 +171,6 @@ function returnMatches(){
 		//Making the small description visible
 		document.getElementById('description').style.visibility = "visible";
 
-		//for match <p> color
-		colors = ["beige", "aliceblue", "antique", "azure", "bisque"];
 		var colorNum = 0;
 		//i = len - 5
 		//zero-indexing in js
