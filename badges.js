@@ -356,6 +356,91 @@ function returnBadgeHTML(clubName){
 		case("RKC Waalwijk"):
 			badgeLocation += "/DED/waalwijk.png"
 			break
+		//MLS
+		case("Atlanta"):
+			badgeLocation += "/MLS/atl.png"
+			break
+		case("Philadelphia"):
+			badgeLocation += "/MLS/philadelphia.png"
+			break
+		case("Minnesota"):
+			badgeLocation += "/MLS/minnesota.png"
+			break
+		case("Los Angeles FC"):
+			badgeLocation += "/MLS/lafc.png"
+			break
+		case("Colorado"):
+			badgeLocation += "/MLS/colorado.png"
+			break
+		case("Columbus"):
+			badgeLocation += "/MLS/columbus.png"
+			break
+		case("Whitecaps"):
+			badgeLocation += "/MLS/vancouver.png"
+			break
+		case("Dallas"):
+			badgeLocation += "/MLS/dallas.png"
+			break
+		case("Toronto"):
+			badgeLocation += "/MLS/toronto.png"
+			break
+		case("D.C. United"):
+			badgeLocation += "/MLS/dc.png"
+			break
+		case("Charlotte"):
+			badgeLocation += "/MLS/charlotte.png"
+			break
+		case("SJ Earthquakes"):
+			badgeLocation += "/MLS/san_jose.png"
+			break
+		case("New York RB"):
+			badgeLocation += "/MLS/nyrb.png"
+			break
+		case("Inter Miami"):
+			badgeLocation += "/MLS/miami.png"
+			break
+		case("Chicago Fire"):
+			badgeLocation += "/MLS/chicago.png"
+			break
+		case("Austin"):
+			badgeLocation += "/MLS/austin.png"
+			break
+		case("Cincinnati"):
+			badgeLocation += "/MLS/cincinnati.png"
+			break
+		case("Timbers"):
+			badgeLocation += "/MLS/portlans.png"
+			break
+		case("New England"):
+			badgeLocation += "/MLS/new_england.png"
+			break
+		case("Orlando City"):
+			badgeLocation += "/MLS/orlando.png"
+			break
+		case("Montréal"):
+			badgeLocation += "/MLS/montreal.png"
+			break
+		case("Sporting KC"):
+			badgeLocation += "/MLS/kansas_city.png"
+			break
+		case("LA Galaxy"):
+			badgeLocation += "/MLS/lag.png"
+			break
+		case("New York City"):
+			badgeLocation += "/MLS/nycfc.png"
+			break
+		case("Houston Dynamo"):
+			badgeLocation += "/MLS/houston.png"
+			break
+		case("Real Salt Lake"):
+			badgeLocation += "/MLS/rsl.png"
+			break
+		case("Sounders"):
+			badgeLocation += "/MLS/seattle.png"
+			break
+		case("Nashville"):
+			badgeLocation += "/MLS/nashville.png"
+			break
 	}
 	badgeLocation += "\" width=\"10%\" height=\"10%\">";
 	return badgeLocation;
