@@ -409,7 +409,7 @@ function returnBadgeHTML(clubName){
 			badgeLocation += "/MLS/cincinnati.png"
 			break
 		case("Timbers"):
-			badgeLocation += "/MLS/portlans.png"
+			badgeLocation += "/MLS/portland.png"
 			break
 		case("New England"):
 			badgeLocation += "/MLS/new_england.png"
