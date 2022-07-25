@@ -97,17 +97,35 @@ function returnMatches(){
 	//This code gets the value of the league selector ui and converts it to a number we can use to correspond with football data api
 	var leagueCode = leagueSelect();
 	var numMatchesToDisplay = document.getElementById("numMatches").value;
-
 	if (leagueCode == -1){
+		if(numMatchesToDisplay == ""){
+			return;
+		}
 		const xhttps = new XMLHttpRequest();
 		xhttps.addEventListener("load", function onLoad () {
 			var parser = new DOMParser();
 			var htmlDoc = parser.parseFromString(this.responseText, 'text/html');
-			var lastTenMatchesAsList = htmlDoc.getElementsByClassName("rounds r_61625 w_")[0].getElementsByTagName('li');
+			
+			
+			var weekday = 1;
+			var foundCurrentMatches = false;
+
+			while(!foundCurrentMatches){
+				//document.querySelector("#main > div > div.wrap-holder > div:nth-child(1) > div > div > div > div > div.info-frame > div > ul")			
+				//console.log(htmlDoc.querySelector("#main > div > div.wrap-holder > div:nth-child(1) > div > div > div > div > div.info-frame > div > ul > span:nth-child(" + weekday + ") > li:nth-child(2) > a > span > span"));
+
+				//console.log(htmlDoc.getElementByClassName("info-block"));
+				if((htmlDoc.querySelector("#main > div > div.wrap-holder > div:nth-child(1) > div > div > div > div > div.info-frame > div > ul > span:nth-child(" + weekday + ") > li:nth-child(2) > a > span > span").innerHTML).includes(":")){
+					foundCurrentMatches = true;
+				}
+				weekday += 1;
+			}
+			weekday -= 3;
+			var lastTenMatchesAsList = htmlDoc.getElementsByClassName("rounds r_61625 w_")[weekday].getElementsByTagName('li');
 			lastTenMatchesAsList[0].remove() //not match data
 			var colorNum = 0;
 			var matchCounter = 0;
-			for(const match of lastTenMatchesAsList){
+			for(const match of lastTenMatchesAsList) {
 				let matchData = "";
 				var teams = match.getElementsByClassName("text hidden-xs");
 				for(var i = 0 ; i < teams.length ; i++){
@@ -155,11 +173,11 @@ function returnMatches(){
 	//API CALL
 	$.ajax({
 		headers: { 'X-Auth-Token': API_KEY },
-		url: "http://api.football-data.org/v2/competitions/" + competitionCode[leagueCode] + "/matches?status=FINISHED",
+		url: "http://api.football-data.org/v4/competitions/" + competitionCode[leagueCode] + "/matches?status=FINISHED",
 		dataType: 'json',
 		type: 'GET',
 		error: function(){
-			var   errorText = document.createElement("p");
+			var errorText = document.createElement("p");
 			errorText.innerHTML = "Invalid API token entered! Try new token, or reload extension.";
 			document.getElementById("matches").appendChild(errorText);
 		}
@@ -206,7 +224,9 @@ function returnMatches(){
 			newParagraph.innerHTML += "<br>";
 
 			matchDates.push(response.matches[i].utcDate.substring(0, 10));
-			referees.push(response.matches[i].referees[0].name);
+			if (response.matches[i].referees.length != 0){
+				referees.push(response.matches[i].referees[0].name);
+			}
 
 			document.getElementById('matches').appendChild(newParagraph);
 			//document.getElementById("detailsButton" + i).addEventListener("click", returnMatchDetails(i));
@@ -261,7 +281,6 @@ function returnStandings(){
 
 
 				table = htmlDoc.getElementsByClassName('wikitable')[0]; //only table in page (index 0 of HTML Collection)
-				console.log(table);
 
 				var label = document.createElement("p");
 				label.style.backgroundColor = "#212529";
@@ -285,7 +304,6 @@ function returnStandings(){
 
 
 				table = htmlDoc.getElementsByClassName('wikitable')[0]; //only table in page (index 0 of HTML Collection)
-				console.log(table);
 
 				var label = document.createElement("p");
 				label.style.backgroundColor = "#212529";
@@ -329,10 +347,6 @@ function returnStandings(){
 						htmlDoc.querySelector("#mw-content-text > div.mw-parser-output > table > tbody > tr:nth-child(" + standingIndex + ") > td:nth-child(" + td + ")").style = color;
 					}
 				}
-			}
-
-			for(var k = 1; k < table.rows.length ; k++){
-				console.log(table.rows[k])
 			}
 
 			var label = document.createElement("p");
@@ -380,10 +394,6 @@ function returnStandings(){
 							htmlDoc.querySelector("#mw-content-text > div.mw-parser-output > table > tbody > tr:nth-child(" + standingIndex + ") > td:nth-child(" + td + ")").style = color;
 						}
 					}
-				}
-
-				for(var k = 1; k < table.rows.length ; k++){
-					console.log(table.rows[k])
 				}
 
 				var label = document.createElement("p");
