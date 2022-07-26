@@ -8,5 +8,9 @@
 		"default_popup": "popup.html"
 	},
 	"permissions": ["tabs", "webRequest"],
-	"host_permissions": ["<all_urls>"]
+	"host_permissions": ["<all_urls>"],
+	"icons": {
+		"32": "/img/icon32.png",
+		"128": "/img/icon128.png"
+	}
 }
