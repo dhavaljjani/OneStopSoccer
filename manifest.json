@@ -1,7 +1,7 @@
 {
 	"name": "One Stop Soccer",
 	"manifest_version": 3,
-	"description": "Your one stop spot for match and standings data for MLS and other leagues!",
+	"description": "Your one stop spot for match and standings data for MLS and other leagues! If you ever need a quick way to check latest scores and standings on thr browser.",
 	"version":"1.0",
 	"action":{
 		"default_icon": "./img/icon.png",
