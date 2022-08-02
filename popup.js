@@ -120,7 +120,7 @@ function returnMatches(){
 				}
 				weekday += 1;
 			}
-			weekday -= 3;
+			weekday -= 4;
 			var lastTenMatchesAsList = htmlDoc.getElementsByClassName("rounds r_61625 w_")[weekday].getElementsByTagName('li');
 			lastTenMatchesAsList[0].remove() //not match data
 			var colorNum = 0;
