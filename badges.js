@@ -63,6 +63,15 @@ function returnBadgeHTML(clubName){
 		case("Liverpool FC"):
 			badgeLocation += "/PL/liverpool.png"
 			break
+		case("AFC Bournemouth"):
+			badgeLocation += "/PL/bournemouth.png"
+			break
+		case("Nottingham Forest FC"):
+			badgeLocation += "/PL/nottingham.png"
+			break
+		case("Fulham FC"):
+			badgeLocation += "/PL/fulham.png"
+			break
 		//La Liga
 		case("FC Barcelona"):
 			badgeLocation += "/LALIGA/barcelona.png"
@@ -124,6 +133,12 @@ function returnBadgeHTML(clubName){
 		case("CA Osasuna"):
 			badgeLocation += "/LALIGA/osasuna.png"
 			break
+		case("Real Valladolid CF"):
+			badgeLocation += "/LALIGA/real_valladolid.png"
+			break
+		case("UD Almería"):
+			badgeLocation += "/LALIGA/almeria.png"
+			break
 		//BL
 		case("FC Bayern München"):
 			badgeLocation += "/BL/bayern_munchen.png"
@@ -179,7 +194,22 @@ function returnBadgeHTML(clubName){
 		case("SpVgg Greuther Fürth 1903"):
 			badgeLocation += "/BL/greuther_furth.png"
 			break
+		case("SV Werder Bremen"):
+			badgeLocation += "/BL/werder_bremen.png"
+			break
+		case("FC Schalke 04"):
+			badgeLocation += "/BL/fc_schalke.png"
+			break
 		//L1
+		case("AJ Auxerre"):
+			badgeLocation += "/L1/aj_auxerre.png"
+			break
+		case("Toulouse FC"):
+			badgeLocation += "/L1/toulouse.png"
+			break
+		case("AC Ajaccio"):
+			badgeLocation += "/L1/ac_ajaccio.png"
+			break
 		case("Paris Saint-Germain FC"):
 			badgeLocation += "/L1/psg.png"
 			break
@@ -241,6 +271,15 @@ function returnBadgeHTML(clubName){
 			badgeLocation += "/L1/girondins_bordeaux.png"
 			break
 		//Serie A
+		case("US Cremonese"):
+			badgeLocation += "/SA/us_cremonese.png"
+			break
+		case("US Lecce"):
+			badgeLocation += "/SA/us_lecce.png"
+			break
+		case("AC Monza"):
+			badgeLocation += "/SA/ac_monza.png"
+			break
 		case("AC Milan"):
 			badgeLocation += "/SA/ac_milan.png"
 			break
@@ -302,6 +341,15 @@ function returnBadgeHTML(clubName){
 			badgeLocation += "/SA/torino.png"
 			break
 		//Eredivisie
+		case("FC Volendam"):
+			badgeLocation += "/DED/fc_volendam.png"
+			break
+		case("SBV Excelsior"):
+			badgeLocation += "/DED/excelsior.png"
+			break
+		case("FC Emmen"):
+			badgeLocation += "/DED/fc_emmen.png"
+			break
 		case("AFC Ajax"):
 			badgeLocation += "/DED/ajax.png"
 			break
