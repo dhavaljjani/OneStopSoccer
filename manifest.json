@@ -7,7 +7,6 @@
 		"default_icon": "./img/icon.png",
 		"default_popup": "popup.html"
 	},
-	"permissions": ["tabs", "webRequest"],
 	"host_permissions": ["<all_urls>"],
 	"icons": {
 		"32": "/img/icon32.png",
