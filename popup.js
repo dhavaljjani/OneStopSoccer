@@ -201,7 +201,7 @@ function returnMatches(){
 			match += returnBadgeHTML(response.matches[i].awayTeam.name + "");
 			scoreObj = response.matches[i].score.fullTime;
 			match += "<br>"
-			match += scoreObj.homeTeam + " - " + scoreObj.awayTeam;
+			match += scoreObj.home + " - " + scoreObj.away;
 			if (leagueCode != 6){
 				match += "<br>"
 				match += "Matchday " + response.matches[i].matchday;
