@@ -1,7 +1,7 @@
 //for football-data.org
 let API_KEY = '95302cdd6b314a0a834875835cdd7a15'
 //for API codes
-let competitionCode = ["PL", "PD", "BL1", "FL1", "SA", "DED", "CL"];
+let competitionCode = ["PL", "PD", "BL1", "FL1", "SA", "DED", "CL", "WC"];
 //for match <p> color
 colors = ["beige", "aliceblue", "antique", "azure", "bisque"];
 
@@ -37,6 +37,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 			case("cl"):
 				chrome.tabs.create({ url: 'https://www.youtube.com/uefatv/videos'});
 				break;
+			case("world-cup"):
+				chrome.tabs.create({ url: 'https://www.amnesty.org/en/latest/campaigns/2022/05/fifa-time-to-compensate-migrant-workers-in-qatar/'});
+				break;	
 		}
 	};
 });

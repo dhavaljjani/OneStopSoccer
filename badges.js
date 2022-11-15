@@ -489,6 +489,103 @@ function returnBadgeHTML(clubName){
 		case("Nashville"):
 			badgeLocation += "/MLS/nashville.png"
 			break
+		//INTL
+		case("Ecuador"):
+			badgeLocation += "/INTL/ecuador.png"
+			break
+		case("Netherlands"):
+			badgeLocation += "/INTL/netherlands.png"
+			break
+		case("Qatar"):
+			badgeLocation += "/INTL/qatar.png"
+			break
+		case("Senegal"):
+			badgeLocation += "/INTL/senegal.png"
+			break
+		case("England"):
+			badgeLocation += "/INTL/england.png"
+			break
+		case("Iran"):
+			badgeLocation += "/INTL/iran.png"
+			break
+		case("United States"):
+			badgeLocation += "/INTL/us.png"
+			break
+		case("Wales"):
+			badgeLocation += "/INTL/wales.png"
+			break
+		case("Argentina"):
+			badgeLocation += "/INTL/argentina.png"
+			break
+		case("Mexico"):
+			badgeLocation += "/INTL/mexico.png"
+			break
+		case("Poland"):
+			badgeLocation += "/INTL/poland.png"
+			break
+		case("Saudi Arabia"):
+			badgeLocation += "/INTL/saudi_arabia.png"
+			break
+		case("Australia"):
+			badgeLocation += "/INTL/australia.png"
+			break
+		case("Denmark"):
+			badgeLocation += "/INTL/denmark.png"
+			break
+		case("France"):
+			badgeLocation += "/INTL/france.png"
+			break
+		case("Tunisia"):
+			badgeLocation += "/INTL/tunisia.png"
+			break
+		case("Costa Rica"):
+			badgeLocation += "/INTL/costa_rica.png"
+			break
+		case("Germany"):
+			badgeLocation += "/INTL/germany.png"
+			break
+		case("Japan"):
+			badgeLocation += "/INTL/japan.png"
+			break
+		case("Spain"):
+			badgeLocation += "/INTL/spain.png"
+			break
+		case("Belgium"):
+			badgeLocation += "/INTL/belgium.png"
+			break
+		case("Canada"):
+			badgeLocation += "/INTL/canada.png"
+			break
+		case("Croatia"):
+			badgeLocation += "/INTL/croatia.png"
+			break
+		case("Morocco"):
+			badgeLocation += "/INTL/morocco.png"
+			break
+		case("Brazil"):
+			badgeLocation += "/INTL/brazil.png"
+			break
+		case("Cameroon"):
+			badgeLocation += "/INTL/cameroon.png"
+			break
+		case("Serbia"):
+			badgeLocation += "/INTL/serbia.png"
+			break
+		case("Switzerland"):
+			badgeLocation += "/INTL/switzerland.png"
+			break
+		case("Ghana"):
+			badgeLocation += "/INTL/ghana.png"
+			break
+		case("Portugal"):
+			badgeLocation += "/INTL/portgual.png"
+			break
+		case("South Korea"):
+			badgeLocation += "/INTL/south_korea.png"
+			break
+		case("Uruguay"):
+			badgeLocation += "/INTL/uruguay.png"
+			break
 	}
 	badgeLocation += "\" width=\"10%\" height=\"10%\">";
 	return badgeLocation;

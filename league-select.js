@@ -27,6 +27,9 @@ function leagueSelect(){
 		case("cl"):
 			codeNum = 6;
 			break
+		case("world-cup"):
+			codeNum = 7;
+			break
 	}
     return codeNum;
 }
