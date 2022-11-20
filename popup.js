@@ -445,9 +445,9 @@ function returnStandings(){
 				let h1 = document.createElement('th');
 				h1.innerHTML = "Club";
 				let h2 = document.createElement('th');
-				h2.innerHTML = "W";
+				h2.innerHTML = "GP";
 				let h3 = document.createElement('th');
-				h3.innerHTML = "GP";
+				h3.innerHTML = "W";
 				let h4 = document.createElement('th');
 				h4.innerHTML = "D";
 				let h5 = document.createElement('th');
