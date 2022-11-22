@@ -5,6 +5,13 @@ let competitionCode = ["PL", "PD", "BL1", "FL1", "SA", "DED", "CL", "WC"];
 //for match <p> color
 colors = ["beige", "aliceblue", "antique", "azure", "bisque"];
 
+setInterval(()=>{
+	var bodyColor = document.getElementById('body-color');
+	var color = bodyColor.value;
+	document.body.style.backgroundColor = color;
+}, 200);
+
+
 var referees = [];
 var matchDates = [];
 var matchInd = 0;
@@ -75,10 +82,23 @@ function makeAPIinputElement(){
     a.appendChild(linkText);
     a.href = "https://www.football-data.org/";
 
+
 	document.getElementById("APItext").innerHTML += "If you would like to make more than 10 calls per minute, feel free to create an account on ";
 	document.getElementById("APItext").appendChild(a);
 	document.getElementById("APItext").innerHTML += " and create your own API token with varying plans. Copy and paste it here to use: ";
 	document.getElementById("APItext").appendChild(APIinput);
+
+
+	document.getElementById("color").style = "text-align: center;";
+	var colorInput = document.createElement("input");
+	colorInput.type = "color";
+	colorInput.id = "body-color";
+	colorInput.value = "#EF5353";
+	colorInput.style = "height: 20px; width: 50px;";
+
+	document.getElementById("color").innerHTML += "Customize the color: ";
+	document.getElementById("color").appendChild(colorInput);
+
 }
 
 function returnMatches(){
@@ -94,6 +114,7 @@ function returnMatches(){
 	}
 
 	document.getElementById("APItext").innerHTML = "";
+	document.getElementById('color').innerHTML = "";
 
 	makeAPIinputElement();
 	
@@ -257,8 +278,10 @@ function returnStandings(){
 		}
 	}
 	document.getElementById("APItext").innerHTML = "";
+	document.getElementById('color').innerHTML = "";
 
 	makeAPIinputElement();
+
 
 	//clear standings1 id div: 
 	while (document.getElementById('standings1').firstChild) {
