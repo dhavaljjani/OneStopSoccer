@@ -2,7 +2,7 @@
 	"name": "One Stop Soccer",
 	"manifest_version": 3,
 	"description": "Your one stop spot for updates in MLS and other leagues! If you need a quick way to check scores and standings data on the browser.",
-	"version":"1.01",
+	"version":"1.02",
 	"action":{
 		"default_icon": "./img/icon.png",
 		"default_popup": "popup.html"
