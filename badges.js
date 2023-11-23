@@ -72,6 +72,12 @@ function returnBadgeHTML(clubName){
 		case("Fulham FC"):
 			badgeLocation += "/PL/fulham.png"
 			break
+		case("Sheffield United FC"):
+			badgeLocation += "/PL/sheffield.png"
+			break
+		case("Luton Town FC"):
+			badgeLocation += "/PL/luton.png"
+			break
 		//La Liga
 		case("FC Barcelona"):
 			badgeLocation += "/LALIGA/barcelona.png"
@@ -139,6 +145,9 @@ function returnBadgeHTML(clubName){
 		case("UD Almería"):
 			badgeLocation += "/LALIGA/almeria.png"
 			break
+		case("Las Palmas"):
+			badgeLocation += "/LALIGA/las_palmas.png"
+			break
 		//BL
 		case("FC Bayern München"):
 			badgeLocation += "/BL/bayern_munchen.png"
@@ -199,6 +208,12 @@ function returnBadgeHTML(clubName){
 			break
 		case("FC Schalke 04"):
 			badgeLocation += "/BL/fc_schalke.png"
+			break
+		case("SV Darmstadt 98"):
+			badgeLocation += "/BL/darmstadt.png"
+			break
+		case("1. FC Heidenheim 1846"):
+			badgeLocation += "/BL/heidenheim.png"
 			break
 		//L1
 		case("AJ Auxerre"):
@@ -270,6 +285,9 @@ function returnBadgeHTML(clubName){
 		case("FC Girondins de Bordeaux"):
 			badgeLocation += "/L1/girondins_bordeaux.png"
 			break
+		case("Le Havre AC"):
+			badgeLocation += "/L1/le_havre.png"
+			break
 		//Serie A
 		case("US Cremonese"):
 			badgeLocation += "/SA/us_cremonese.png"
@@ -340,6 +358,9 @@ function returnBadgeHTML(clubName){
 		case("Torino FC"):
 			badgeLocation += "/SA/torino.png"
 			break
+		case("Frosinone Calcio"):
+			badgeLocation += "/SA/frosinone.png"
+			break
 		//Eredivisie
 		case("FC Volendam"):
 			badgeLocation += "/DED/fc_volendam.png"
@@ -404,90 +425,96 @@ function returnBadgeHTML(clubName){
 		case("RKC Waalwijk"):
 			badgeLocation += "/DED/waalwijk.png"
 			break
+		case("Almere City FC"):
+			badgeLocation += "/DED/almere_city.png"
+			break
 		//MLS
-		case("Atlanta"):
+		case("Atlanta United FC"):
 			badgeLocation += "/MLS/atl.png"
 			break
-		case("Philadelphia"):
+		case("Philadelphia Union"):
 			badgeLocation += "/MLS/philadelphia.png"
 			break
-		case("Minnesota"):
+		case("Minnesota United FC"):
 			badgeLocation += "/MLS/minnesota.png"
 			break
 		case("Los Angeles FC"):
 			badgeLocation += "/MLS/lafc.png"
 			break
-		case("Colorado"):
+		case("Colorado Rapids"):
 			badgeLocation += "/MLS/colorado.png"
 			break
-		case("Columbus"):
+		case("Columbus Crew"):
 			badgeLocation += "/MLS/columbus.png"
 			break
-		case("Whitecaps"):
+		case("Vancouver Whitecaps FC"):
 			badgeLocation += "/MLS/vancouver.png"
 			break
-		case("Dallas"):
+		case("FC Dallas"):
 			badgeLocation += "/MLS/dallas.png"
 			break
-		case("Toronto"):
+		case("Toronto FC"):
 			badgeLocation += "/MLS/toronto.png"
 			break
 		case("D.C. United"):
 			badgeLocation += "/MLS/dc.png"
 			break
-		case("Charlotte"):
+		case("Charlotte FC"):
 			badgeLocation += "/MLS/charlotte.png"
 			break
-		case("SJ Earthquakes"):
+		case("San Jose Earthquakes"):
 			badgeLocation += "/MLS/san_jose.png"
 			break
-		case("New York RB"):
+		case("New York Red Bulls"):
 			badgeLocation += "/MLS/nyrb.png"
 			break
-		case("Inter Miami"):
+		case("Inter Miami CF"):
 			badgeLocation += "/MLS/miami.png"
 			break
-		case("Chicago Fire"):
+		case("Chicago Fire FC"):
 			badgeLocation += "/MLS/chicago.png"
 			break
-		case("Austin"):
+		case("Austin FC"):
 			badgeLocation += "/MLS/austin.png"
 			break
-		case("Cincinnati"):
+		case("FC Cincinnati"):
 			badgeLocation += "/MLS/cincinnati.png"
 			break
-		case("Timbers"):
+		case("Portland Timbers FC"):
 			badgeLocation += "/MLS/portland.png"
 			break
-		case("New England"):
+		case("New England Revolution"):
 			badgeLocation += "/MLS/new_england.png"
 			break
-		case("Orlando City"):
+		case("Orlando City SC"):
 			badgeLocation += "/MLS/orlando.png"
 			break
-		case("Montréal"):
+		case("CF Montréal"):
 			badgeLocation += "/MLS/montreal.png"
 			break
-		case("Sporting KC"):
+		case("Sporting Kansas City"):
 			badgeLocation += "/MLS/kansas_city.png"
 			break
 		case("LA Galaxy"):
 			badgeLocation += "/MLS/lag.png"
 			break
-		case("New York City"):
+		case("New York City FC"):
 			badgeLocation += "/MLS/nycfc.png"
 			break
-		case("Houston Dynamo"):
+		case("Houston Dynamo FC"):
 			badgeLocation += "/MLS/houston.png"
 			break
 		case("Real Salt Lake"):
 			badgeLocation += "/MLS/rsl.png"
 			break
-		case("Sounders"):
+		case("Seattle Sounders FC"):
 			badgeLocation += "/MLS/seattle.png"
 			break
-		case("Nashville"):
+		case("Nashville SC"):
 			badgeLocation += "/MLS/nashville.png"
+			break
+		case("St. Louis City SC"):
+			badgeLocation += "/MLS/st_louis.png"
 			break
 		//INTL
 		case("Ecuador"):
