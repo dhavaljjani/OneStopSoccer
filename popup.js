@@ -6,9 +6,11 @@ let competitionCode = ["PL", "PD", "BL1", "FL1", "SA", "DED", "CL", "WC"];
 colors = ["beige", "aliceblue", "antique", "azure", "bisque"];
 
 setInterval(()=>{
-	var bodyColor = document.getElementById('body-color');
-	var color = bodyColor.value;
-	document.body.style.backgroundColor = color;
+	if (document.getElementById('body-color')){
+		var bodyColor = document.getElementById('body-color');
+		var color = bodyColor.value;
+		document.body.style.backgroundColor = color;
+	}
 }, 200);
 
 
@@ -122,75 +124,75 @@ function returnMatches(){
 	var leagueCode = leagueSelect();
 	var numMatchesToDisplay = document.getElementById("numMatches").value;
 	if (leagueCode == -1){
-		if(numMatchesToDisplay == ""){
-			return;
-		}
-		const xhttps = new XMLHttpRequest();
-		xhttps.addEventListener("load", function onLoad () {
-			var parser = new DOMParser();
-			var htmlDoc = parser.parseFromString(this.responseText, 'text/html');
-			
-			
-			var weekday = 1;
-			var foundCurrentMatches = false;
-
-			while(!foundCurrentMatches){
-				//document.querySelector("#main > div > div.wrap-holder > div:nth-child(1) > div > div > div > div > div.info-frame > div > ul")			
-				//console.log(htmlDoc.querySelector("#main > div > div.wrap-holder > div:nth-child(1) > div > div > div > div > div.info-frame > div > ul > span:nth-child(" + weekday + ") > li:nth-child(2) > a > span > span"));
-
-				//console.log(htmlDoc.getElementByClassName("info-block"));
-				if((htmlDoc.querySelector("#main > div > div.wrap-holder > div:nth-child(1) > div > div > div > div > div.info-frame > div > ul > span:nth-child(" + weekday + ") > li:nth-child(2) > a > span > span").innerHTML).includes(":")){
-					foundCurrentMatches = true;
-				}
-				weekday += 1;
-			}
-			weekday -= 4;
-			var lastTenMatchesAsList = htmlDoc.getElementsByClassName("rounds r_61625 w_")[weekday].getElementsByTagName('li');
-			lastTenMatchesAsList[0].remove() //not match data
+		var league = (leagueCode == -1) ? "mls" : "usl";
+		console
+		var settings = {
+			"url": "https://app.americansocceranalysis.com/api/v1/" + league + "/games",
+			"method": "GET",
+			"timeout": 0,
+			"headers": {
+			  "Content-Type": "application/json"
+			},
+		};
+		  
+		$.ajax(settings).done(function (response) {
 			var colorNum = 0;
-			var matchCounter = 0;
-			for(const match of lastTenMatchesAsList) {
-				let matchData = "";
-				var teams = match.getElementsByClassName("text hidden-xs");
-				for(var i = 0 ; i < teams.length ; i++){
-					let teamName = teams[i].textContent.trim();
-					if(i == 0){
-						matchData += returnBadgeHTML(teamName) + " ";
-						matchData += teamName;
-						matchData += " played ";
-					} else {
-						matchData += teamName;
-						matchData += returnBadgeHTML(teamName) + " ";
-					}
+			for(var i = 0 ; i < numMatchesToDisplay ; i++){
+				//console.log(response[i]);
+
+				var homeName = getMLSteamFromID(response[i].home_team_id);
+				var awayName = getMLSteamFromID(response[i].away_team_id);
+				
+				match = returnBadgeHTML(homeName + "");
+				match +=  "<a href=\"" + makeWikipediaLink(homeName) + "\">" + homeName + "</a>";
+				match += " played ";
+				match += "<a href=\"" + makeWikipediaLink(awayName) + "\">" + awayName + "</a>";
+				match += returnBadgeHTML(awayName + "");
+
+				match += "<br>"
+				match += response[i].home_score + " - " + response[i].away_score;
+				match += "<br> Matchday " + response[i].matchday;
+				if (response[i].knockout_game == true){
+					match += "<br> <strong> Playoffs </strong> <br>"
+				} else {
+					match += "<br> Regular Season <br>"
 				}
-				matchData += "<br>";
-				var score = match.getElementsByClassName("score-text");
-				for(var k = 0 ; k < score.length ; k++){
-					matchData += score[k].textContent;
-				}
+				var stadium = getStadiumFromID(response[i].stadium_id);
+				var referee = getRefereeFromID(response[i].referee_id);
+				var attendance = response[i].attendance.toLocaleString();
+
 				const newParagraph = document.createElement("p");
-				newParagraph.innerHTML += matchData;
 				newParagraph.style.backgroundColor = colors[colorNum];
+				newParagraph.innerHTML += match;
+
+				const details = document.createElement("details");
+				details.style.backgroundColor = "#212529";
+				details.style.color = "white";
+				details.style.borderBottomLeftRadius = "10px";
+				details.style.borderBottomRightRadius = "10px";
+				details.innerHTML = "<strong> Attendance: </strong>" + attendance;
+				details.innerHTML += "<br><strong> Stadium: </strong>" + stadium;
+				details.innerHTML += "<br><strong> Referee: </strong>" + referee;
+				newParagraph.appendChild(details);
+
+				details.addEventListener("toggle", (event) => {
+					if (!details.open) {
+						details.innerHTML = "";
+					}
+				});
+
 				document.getElementById('matches').appendChild(newParagraph);
 				//cycling through the color options, reset at 5
 				colorNum += 1;
-				matchCounter += 1;
+				matchInd += 1;
 				if(colorNum == 5){
 					colorNum = 0;
 				}
-				if(numMatchesToDisplay == matchCounter){
-					return;
-				}
 			}
+			const usl = document.createElement("p");
+			usl.innerHTML = "USL match and standings information coming soon!"
+			document.getElementById('matches').appendChild(usl);
 		});
-		xhttps.open("GET", "https://www.footballcritic.com/mls/season-2022/matches/47/63944");
-		xhttps.send();
-		const matchAlert = document.createElement("p");
-		matchAlert.style.backgroundColor = "#212529";
-		matchAlert.style.color = "white";
-	 	matchAlert.innerHTML = "More MLS Match details coming soon!";
-
-		document.getElementById('matches').appendChild(matchAlert);
 		return;
 	}
 
@@ -235,33 +237,32 @@ function returnMatches(){
 			newParagraph.innerHTML += match;
 			newParagraph.style.backgroundColor = colors[colorNum];
 
-			var detailsButton = document.createElement("input");
-			detailsButton.type = "button";
-			detailsButton.style.backgroundColor = "#212529";
-			detailsButton.style.color = "white";
-			detailsButton.style.borderRadius = "5%";
-			detailsButton.value = "Details";
-			detailsButton.id = "detailsButton" + i;
-
-			newParagraph.innerHTML += "<br>";
-			newParagraph.appendChild(detailsButton);
-			newParagraph.innerHTML += "<br>";
-
 			matchDates.push(response.matches[i].utcDate.substring(0, 10));
 			if (response.matches[i].referees.length != 0){
 				referees.push(response.matches[i].referees[0].name);
 			}
 
 			document.getElementById('matches').appendChild(newParagraph);
-			//document.getElementById("detailsButton" + i).addEventListener("click", returnMatchDetails(i));
-			document.getElementById("detailsButton" + i).onclick = function(){
-				newParagraph.innerHTML += "<br>" + matchDates[matchInd] + "<br>";
-				newParagraph.innerHTML += "Referee: " + referees[matchInd] + "<br>";
-				matchInd += 1;
-			}
+
+			const details = document.createElement("details");
+			details.style.backgroundColor = "#212529";
+			details.style.color = "white";
+			details.style.borderBottomLeftRadius = "10px";
+			details.style.borderBottomRightRadius = "10px";
+			details.innerHTML = matchDates[matchInd] + "<br>";
+			details.innerHTML += "Referee: " + referees[matchInd] + "<br>";
+			newParagraph.appendChild(details);
+			
+
+			details.addEventListener("toggle", (event) => {
+				if (!details.open) {
+					details.innerHTML = "";
+				}
+			});
 			
 			//cycling through the color options, reset at 5
 			colorNum += 1;
+			matchInd += 1;
 			if(colorNum == 5){
 				colorNum = 0;
 			}
@@ -271,6 +272,7 @@ function returnMatches(){
 
 function returnStandings(){
 	if (document.getElementById("APIinput")){
+		//if user enters in an API key of their own for use
 		if (document.getElementById("APIinput").value != ""){
 			API_KEY = document.getElementById("APIinput").value;
 		} else {
@@ -291,7 +293,7 @@ function returnStandings(){
     }
 
 	var leagueCode = leagueSelect();
-	if(leagueCode == -1){
+	if(leagueCode == -1){ // -1 means MLS
 		document.getElementById("oldMLSdata").style.visibility = "visible";
 		var year = document.getElementById("standingsYear").value;
 		if(year != "2022"){
@@ -441,7 +443,7 @@ function returnStandings(){
 		document.getElementById("oldMLSdata").style.visibility = "hidden";
 		$.ajax({
 			headers: { 'X-Auth-Token': API_KEY },
-			url: "https://api.football-data.org/v2/competitions/" + competitionCode[leagueCode] + "/standings",
+			url: "https://api.football-data.org/v4/competitions/" + competitionCode[leagueCode] + "/standings",
 			dataType: 'json',
 			type: 'GET',
 			error: function(){
@@ -539,4 +541,4 @@ function returnStandings(){
 			}
 		});
 	}
-}
+} 
